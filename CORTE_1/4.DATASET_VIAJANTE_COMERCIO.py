@@ -1,5 +1,5 @@
 #####################################################################################
-# AUTOR: BRAYAN MATALLANA JOYA                                                      #
+# AUTOR: BRAYAN MATALLANA JOYA, MATTHEW ESPINOSA Y SANTIAGO CARVAJAL                #
 # FECHA: 20/09/2024                                                                 #
 # DESCRIPCION:Algoritmo genetico para resolver el problema del viajante del comercio#
 # ASIGNATURA: BIG DATA, CIENCIA DE DATOS- TS7A                                      #
