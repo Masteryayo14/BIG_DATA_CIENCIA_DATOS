@@ -1,0 +1,80 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMprgQv7oenjCwOGreZHIJP",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Masteryayo14/BIG_DATA_CIENCIA_DATOS/blob/main/CORT2%20EJERCICIO%203\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "hl66NuJN7pNb"
+      },
+      "outputs": [],
+      "source": [
+        "# Trabajao presentado por: Santiago Carvajal del salon TS7A\n",
+        "import pandas as pd\n",
+        "import matplotlib.pyplot as plt\n",
+        "import seaborn as sns\n",
+        "\n",
+        "\n",
+        "titanic = sns.load_dataset('titanic')\n",
+        "\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "sns.countplot(data=titanic, x='class', hue='survived', palette='pastel')\n",
+        "plt.title('Supervivencia por Clase')\n",
+        "plt.xlabel('Clase')\n",
+        "plt.ylabel('Número de Pasajeros')\n",
+        "plt.legend(title='Supervivió', labels=['No', 'Sí'])\n",
+        "plt.show()\n",
+        "\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "sns.histplot(data=titanic[titanic['survived'] == 1]['age'], bins=30, kde=True, color='green')\n",
+        "plt.title('Distribución de Edad de Sobrevivientes')\n",
+        "plt.xlabel('Edad')\n",
+        "plt.ylabel('Frecuencia')\n",
+        "plt.show()\n",
+        "\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "sns.countplot(data=titanic, x='sex', hue='survived', palette='pastel')\n",
+        "plt.title('Supervivencia por Género')\n",
+        "plt.xlabel('Género')\n",
+        "plt.ylabel('Número de Pasajeros')\n",
+        "plt.legend(title='Supervivió', labels=['No', 'Sí'])\n",
+        "plt.show()\n",
+        "\n",
+        "\n",
+        "plt.figure(figsize=(10, 6))\n",
+        "correlation = titanic.corr()\n",
+        "sns.heatmap(correlation, annot=True, cmap='coolwarm', fmt='.2f')\n",
+        "plt.title('Mapa de Calor de Correlación')\n",
+        "plt.show()"
+      ]
+    }
+  ]
+}
